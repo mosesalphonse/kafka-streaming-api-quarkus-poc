@@ -49,7 +49,43 @@ deploy kafka cluster on kubernetes on 'kafka' namespace
 ./kube/01_kafka/deploy-kafka.sh
 
 ```
-deploy all the 3 workloads (frontend, http processor, messaging processor)
+deploy all the 3 workloads (frontend, http processor, messaging processor):
+       
+**Note:** the below steps will build and push the docker image into the image repo. In My implementation, I have configured my GCR (Google Container Repository).
+     
+You must modify the below properties values before building:
+
+ **sash-kafka:**
+ 
+**application.properties**
+ <li>
+quarkus.container-image.registry=gcr.io // if you choose different image repo, modify this, if you are happy to use google, leave as it is
+   <li>
+quarkus.container-image.group=moses-327312 // in case of google repo, this should be your Google Project ID
+     <li>
+kafka.bootstrap.servers=my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092 // Kafaka bootstrap cluster
+
+**sash-http:**
+
+**application.properties**
+       
+       <li>
+quarkus.container-image.registry=gcr.io  // if you choose different image repo, modify this, if you are happy to use google, leave as it is
+         <li>
+quarkus.container-image.group=moses-327312 // in case of google repo, this should be your Google Project ID
+
+**sash-frontend:**
+
+**application.properties**
+           <li>
+quarkus.container-image.registry=gcr.io // if you choose different image repo, modify this, if you are happy to use google, leave as it is
+             <li>
+quarkus.container-image.group=moses-327312 // in case of google repo, this should be your Google Project ID
+               <li>
+com.sash.quarkus.coffeeshop.http.BaristaService/mp-rest/url=http://sash-http-service.kafka.svc.cluster.local:8080 // sash-http endpoint, leave it as it if you are not changing
+                 <li>
+kafka.bootstrap.servers=my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092  // in case of google repo, this should be your Google Project ID
+                   
        
 ```
 cd sash-http
