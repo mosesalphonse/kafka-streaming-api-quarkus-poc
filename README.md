@@ -49,3 +49,24 @@ deploy kafka cluster on kubernetes on 'kafka' namespace
 ./kube/01_kafka/deploy-kafka.sh
 
 ```
+deploy all the 3 workloads (frontend, http processor, messaging processor)
+       
+```
+cd sash-http
+
+mvn clean package -Dquarkus.container-image.push=true
+
+cd .. 
+ 
+cd sash-kafka
+
+mvn clean package -Dquarkus.container-image.push=true
+
+cd .. 
+
+cd sash-frontend
+
+mvn clean package -Dquarkus.container-image.push=true
+
+cd .. 
+```
