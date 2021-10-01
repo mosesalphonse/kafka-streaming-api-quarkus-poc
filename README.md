@@ -19,6 +19,7 @@ Istio Instalation (tested on istio-1.11.3)
      <li>
 Kiali Dashboard
 
+**Note**: Need a kubernetes cluster with Istio and Kiali dashboard installed on it. Refer istio 'https://istio.io/latest/docs/setup/getting-started/' for istio installation
 
 ##  Reference Architecture:
 
