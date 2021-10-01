@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: sash-frontend
-          image: "gcr.io/moses-327312/sash-frontend:v4"
+          image: "gcr.io/moses-327312/sash-frontend:v1"
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
