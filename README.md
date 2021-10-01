@@ -122,3 +122,13 @@ cd ..
                    
                   
  ```
+                  
+  Deploy the services into Kubernetes cluster:
+                   
+ 
+ ```
+     kubectl -n kafka apply -f  kube/03_services/sash-http-services.yaml
+     
+     kubectl -n kafka apply -f  kube/03_services/sash-frontend-services.yaml
+                                     
+ ```
