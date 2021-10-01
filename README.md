@@ -132,3 +132,26 @@ cd ..
      kubectl -n kafka apply -f  kube/03_services/sash-frontend-services.yaml
                                      
  ```
+                  
+  Enable Istion Ingress Gateway to allow traffic into sash-frontend over http port 80 using Kiali dashboard(UI):
+                   
+ 
+ ```
+    istioctl dashboard kiali
+                                               
+ ```
+      
+ After login into kiali dashboard, go to 'Services' and select 'sash-frontend-service'
+ 
+  ```
+  Select 'Request Routing' action on the top left
+                   
+  Select 'Add Routing Rule' 
+                   
+  Go to 'Advanced Options' and select 'Gateways'
+                   
+  Enable 'Add Gateways'
+                   
+  And Click 'Create' button
+                   
+   ```
