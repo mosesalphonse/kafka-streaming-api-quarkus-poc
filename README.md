@@ -105,3 +105,20 @@ mvn clean package -Dquarkus.container-image.push=true
 
 cd .. 
 ```
+
+**Note:** If the above build is successfull, docker image should be uploaded into the respective image repo
+  
+                   
+ Deploy the workloads into Kubernetes cluster:
+                   
+ You must modify the image path in the deployment files under /kube/02_workloads directory
+ 
+ ```
+     kubectl -n kafka apply -f  kube/02_workloads/sash-kafka.yaml
+     
+     kubectl -n kafka apply -f  kube/02_workloads/sash-http.yaml
+                   
+     kubectl -n kafka apply -f  kube/02_workloads/sash-frontend.yaml
+                   
+                  
+ ```
