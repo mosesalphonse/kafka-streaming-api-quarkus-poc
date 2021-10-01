@@ -160,8 +160,11 @@ cd ..
                    
   Identify the istio-ingressgateway's external ip, if '35.221.217.16', access your frontend app as http://35.221.217.16
       
-  You can send request over HTTP and Messaging.
+  You can send request over HTTP and Messaging. You can use browser's developer tool how the Server sent events are working in case of messaging streams. 
                    
   
   ##  Cleanup:       
                    
+ ```
+   ./cleanup.sh
+ ```
