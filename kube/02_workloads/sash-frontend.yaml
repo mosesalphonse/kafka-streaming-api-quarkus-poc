@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sash-frontend
+  labels:
+    app: sash-frontend
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sash-frontend
+      version : v1
+  template:
+    metadata:
+      labels:
+        app: sash-frontend
+        version: v1
+    spec:
+      containers:
+        - name: sash-frontend
+          image: "gcr.io/moses-327312/sash-frontend:v4"
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          env:
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+            - name: QUARKUS_HTTP_PORT
+              value: "8080"
+            - name: ME_ESCOFFIER_QUARKUS_COFFEESHOP_HTTP_BARISTASERVICE_MP_REST_URL
+              value: http://sash-http:8080

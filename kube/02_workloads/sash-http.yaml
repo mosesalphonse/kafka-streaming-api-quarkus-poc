@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sash-http
+  labels:
+    app: sash-http
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sash-http
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: sash-http
+        version: v1
+    spec:
+      containers:
+        - name: sash-http
+          image: "gcr.io/moses-327312/sash-http:v1"
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          env:
+            - name: QUARKUS_HTTP_PORT
+              value: "8080"
