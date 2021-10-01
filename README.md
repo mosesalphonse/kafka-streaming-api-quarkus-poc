@@ -37,7 +37,7 @@ cd kafka-streaming-api-quarkus-poc
 Create namespace and add that namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application
 ```
   
-kubectl namespace kafka
+kubectl create namespace kafka
 
 kubectl label namespace kafka istio-injection=enabled
 
