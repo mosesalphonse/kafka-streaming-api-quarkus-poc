@@ -43,7 +43,7 @@ kubectl create namespace kafka
 kubectl label namespace kafka istio-injection=enabled
 
 ```
-deploy kafaka cluster on kubernetes on 'kafka' namespace
+deploy kafka cluster on kubernetes on 'kafka' namespace
        
 ``` 
 ./kube/01_kafka/deploy-kafka.sh
