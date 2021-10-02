@@ -6,6 +6,7 @@ public class Beverage {
     private String customer;
     private String preparedBy;
     private String orderId;
+    private String orderMethod;
 
     public Beverage() {
 
@@ -16,6 +17,7 @@ public class Beverage {
         this.customer = order.getName();
         this.orderId = order.getOrderId();
         this.preparedBy = baristaName;
+        this.orderMethod=order.getOrderMethod();
     }
 
     public String getBeverage() {
@@ -53,4 +55,12 @@ public class Beverage {
         this.orderId = orderId;
         return this;
     }
+
+	public String getOrderMethod() {
+		return orderMethod;
+	}
+
+	public void setOrderMethod(String orderMethod) {
+		this.orderMethod = orderMethod;
+	}
 }

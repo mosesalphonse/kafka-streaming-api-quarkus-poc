@@ -5,6 +5,7 @@ public class Order {
     private String product;
     private String name;
     private String orderId;
+    private String orderMethod;
 
     public String getProduct() {
         return product;
@@ -32,4 +33,12 @@ public class Order {
         this.orderId = orderId;
         return this;
     }
+
+	public String getOrderMethod() {
+		return orderMethod;
+	}
+
+	public void setOrderMethod(String orderMethod) {
+		this.orderMethod = orderMethod;
+	}
 }

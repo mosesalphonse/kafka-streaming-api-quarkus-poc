@@ -10,6 +10,7 @@ public class Beverage {
     public String preparedBy;
     public String orderId;
     public State preparationState;
+    public String orderMethod;
 
     public Beverage() {
 
@@ -28,6 +29,7 @@ public class Beverage {
 
     public Beverage(Order order, String baristaName, State state) {
         this.beverage = order.getProduct();
+        this.orderMethod = order.getOrderMethod();
         this.customer = order.getName();
         this.orderId = order.getOrderId();
         this.preparedBy = baristaName;

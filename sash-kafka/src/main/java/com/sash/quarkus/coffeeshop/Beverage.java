@@ -10,6 +10,7 @@ public class Beverage {
     public String preparedBy;
     public String orderId;
     public State preparationState;
+    public String orderMethod;
 
     public enum State {
         IN_QUEUE,
@@ -25,6 +26,7 @@ public class Beverage {
         this.beverage = order.getProduct();
         this.customer = order.getName();
         this.orderId = order.getOrderId();
+        this.orderMethod = order.getOrderMethod();
         this.preparedBy = baristaName;
         this.preparationState = state;
     }

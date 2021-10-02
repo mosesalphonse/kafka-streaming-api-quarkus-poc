@@ -64,6 +64,7 @@
         <tr>
             <th>Customer</th>
             <th>Product</th>
+            <th>Order Method</th>
             <th>Prepared By</th>
             <th>State</th>
         </tr>
@@ -90,7 +91,8 @@
         const method = $("#orderMethod option:selected").val();
         const order = {
             name: $("#customerName").val(),
-            product: $("#product option:selected").val()
+            product: $("#product option:selected").val(),
+            orderMethod: $("#orderMethod option:selected").val()
         };
         console.log("Customer name = " + order.name);
 
@@ -120,6 +122,7 @@
                     orderId: response.orderId,
                     customer: order.name,
                     beverage: order.product,
+                    orderMethod: response.orderMethod,
                     preparedBy: response.preparedBy,
                     preparationState: response.preparationState
                 };
@@ -154,6 +157,7 @@
         const id = order.orderId;
         const product = order.beverage;
         const customer = order.customer;
+        const orderMethod = order.orderMethod;
         let barista = "";
         if (order.preparedBy) {
             barista = order.preparedBy;
@@ -161,6 +165,7 @@
         return "<tr id='" + id + "'>" +
             "<td>" + customer + "</td>" +
             "<td>" + product + "</td>" +
+            "<td>" + orderMethod + "</td>" +
             "<td>" + barista + "</td>" +
             "<td>" + order.preparationState + "</td></tr>";
     }
