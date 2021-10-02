@@ -23,7 +23,8 @@ Kiali Dashboard
 
 ##  Reference Architecture:
 
-TBC
+![Kafka_streaming_API](https://user-images.githubusercontent.com/16347988/135710896-83cffdcd-149e-49dc-b612-0be3822af141.JPG)
+
 
 ##  Steps:
 
