@@ -4,7 +4,7 @@
 ## POC:
 
 <li>
-Kafka Streaming API with Server Sent Events
+Kafka Streaming API with Server Sent Events (HTTP Streaming API)
   <li>
 HTTP reactive (just to compare against kafka streaming)
     <li>
