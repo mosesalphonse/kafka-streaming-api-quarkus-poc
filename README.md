@@ -162,10 +162,40 @@ cd ..
   Identify the istio-ingressgateway's external ip, if '35.221.217.16', access your frontend app as http://35.221.217.16
       
   You can send request over HTTP and Messaging. You can use browser's developer tool to see, how the Server sent events (SSE) are working in case of messaging streams. 
-                   
   
-  ##  Cleanup:       
+   ##  Access Kafka:
+   
+   You can get into kafka pod to access kafka topics directly
+   
+   Get into Kafka(into a pod)
+   
+   ```
+    kubectl -n kafka exec -it my-cluster-kafka-0 /bin/sh
+
+    cd bin
+   ``` 
+   
+ List all topics:
+ 
+   ```
+    ./kafka-topics.sh --bootstrap-server localhost:9092 --list
+   ```   
+   Describe a topic:
+   
+   ```
+    ./kafka-topics.sh --describe --topic beverages --bootstrap-server localhost:9092
+   ``` 
+   Read all the messagse from a Topic:
+   
+   ```
+    ./kafka-console-consumer.sh --topic queue --from-beginning --bootstrap-server localhost:9092
+    ./kafka-console-consumer.sh --topic orders --from-beginning --bootstrap-server localhost:9092
+    ./kafka-console-consumer.sh --topic beverages --from-beginning --bootstrap-server localhost:9092
+        ```    
+ 
+ ##  Cleanup:       
                    
  ```
    ./cleanup.sh
+   
  ```
